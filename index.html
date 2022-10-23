@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="1.css" />
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+
+
+<title>Company name - First © Bus</title>
+</head>
+<body>
+<header>
+  
+<script>
+  console.clear();
+
+const canvas = document.createElement('canvas');
+canvas.style.display = 'block';
+document.body.style.margin = '0';
+document.body.appendChild(canvas);
+let w, h;
+const ctx = canvas.getContext('2d');
+
+requestAnimationFrame(render);
+
+let global = {frame: 0, t: 0, a: 0, wind: 0, windTarget: 0};
+
+function render(){
+	[w, h] = [innerWidth, innerHeight];
+	[canvas.width, canvas.height] = [w, h];
+	ctx.lineWidth = 1.5;
+	ctx.fillRect(0, 0, w, h);
+	ctx.strokeStyle = '#ffffff';
+	
+	// global.a = Math.abs(((global.t / 8) % 1) * 2 - 1) * Math.PI / 8 - Math.PI / 16;
+	if(global.frame % 120 === 0) global.windTarget = Math.random() * 16;
+	const ratio = 0.999;
+	global.wind = global.wind * ratio + global.windTarget * (1 - ratio);
+	global.a = Math.abs(((global.wind / 8) % 1) * 2 - 1) * Math.PI / 16 - Math.PI / 32;
+	
+	fractal(6, w / 3 * 1, h, 0, h / 6);
+	fractal(5, w / 3 * 2, h, 0, h / 8);
+
+	global.t += 1 / 60;
+	++global.frame;
+	requestAnimationFrame(render);
+}
+
+function fractal(limit, x, y, a, l){
+	if(limit <= 0) return;
+	
+	ctx.save();
+	ctx.translate(x, y);
+	ctx.rotate(a);
+	ctx.beginPath();
+	
+	const nx = 0;
+	const ny = -l;
+	
+	ctx.lineTo(0, 0);
+	ctx.lineTo(nx, ny);
+	ctx.strokeStyle = `hsl(${limit * 15}, 50%, 50%)`;
+	ctx.stroke();
+	
+	fractal(limit - 1, nx, ny, -Math.PI / 8 + global.a, l * 0.5);
+	fractal(limit - 1, nx, ny, Math.PI / 16 + global.a, l * 0.95);
+	fractal(limit - 1, nx, ny, Math.PI / 4 + global.a, l * 0.75);
+	
+	ctx.restore();
+}
+
+</script>
+
+	<div class="center-block-main">
+        <a href="#"></a><img src="Без названия (1).png" style="margin-left:-265px; right: 25px; height:-100px ; float: left;"  alt=""></a>
+    
+        <nav>
+        	<ul class="manu">
+            	<li><a href="#">Транспорты</a></li>
+                <li><a href="#">Автобус</a></li>
+                <li><a href="#">Маршрут</a></li>
+                <li><a href="#">Новости</a></li>
+               
+            </ul>
+        </nav> 
+    </div>
+</header>
+<div class="now">
+
+<button  class="iii4"  id="myBtn" onclick="javascript:alert('Welcome!')"></button>
+
+<script>
+var input = document.getElementById("myInput");
+input.addEventListener("keyup", function(event) {
+    event.preventDefault();
+    if (event.keyCode === 13) {
+        document.getElementById("myBtn").click();
+    }
+});
+</script>
+
+
+
+
+
+</div>
+<h1 class="crc" >Oбщественный транспорт </h1>
+        <p class="wol">Таджикистана </p>
+<div>
+    <img  class="doll" src="73ded831-b7ac-4225-907d-a0f1e0e1555a_w1080_h608_s.webp" alt="">
+</div>
+
+<div>
+   
+    <p class="vrn">Худжанд стал вторым городом Таджикистана, где заработала новая система оплаты проезда.<br>
+       Теперь автобусы оснащены электронным оборудованием для бесконтактной оплаты, сообщает Sputnik. <br>
+      С ноября проезд фиксируется не наличными, а транспортной картой.<br>
+      И чиновники, и пассажиры уверены, что переход на электронную платежную систему положительно скажется на развитии общественного транспорта.<br>
+      Теперь в Худжанде действуют две системы оплаты проезда в автобусах: «ручная» и электронная.<br>
+      Молодежь, обычно быстрее всех перенимающая новинки, пользуется карточками, а более старшее поколение — по старинке платит контролеру в руки. Поэтому пока не все худжанцы овладели ноу-хау, бинарность будет сохранятся.<br>
+      Сколько будет действовать старая система, власти пока затрудняются сказать.<br>
+       К тому же, контролеры следят, все ли пассажиры добросовестно пробивают карту, и подсказывают тем, кто еще не умеет пользоваться валидатором.<br>
+      «Это новая система, переход на нее немного сложнее, поэтому жители могут оплачивать проезд как с помощью пластиковых карт, так и наличными. Людям нужно время, чтобы адаптироваться к новым правилам», — пояснил Бободжонов.<br>
+      В целом худжандцы положительно оценивают нововведение.<br>
+    </p>
+        
+       
+<div>
+<button class="button" style="vertical-align:middle"><span><a href="https://www.youtube.com/watch?v=HGuW13pAg7Y" style="color: white;">Bus cards</a> </span></button>
+
+</div>
+         <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <div class="numbertext">1 / 3</div>
+              <img src="автобус (3).jpg" style="width:100%">
+              <div class="text">Первый</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">2 / 3</div>
+              <img src="автобус (2).jpg" style="width:100%">
+              <div class="text">Второй</div>
+            </div>
+          
+            <div class="mySlides fade">
+              <div class="numbertext">3 / 3</div>
+              <img src="автобус.jpg" style="width:100%">
+              <div class="text">Третий
+              </div>
+            </div>
+          
+         
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <br>
+          
+       
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+          </div>
+          
+
+</div>
+<script>
+    
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+
+
+<div class="rrr">
+    <img class="greens" src="images (1).png" alt="">
+
+
+
+
+     <p class="bbb">В общественном транспорте города Душанбе появились первые</p>
+     <p class="mmm"> электромобили</p>
+
+     <p class="milk">В результате проводимой политики в сфере охраны окружающей среды инициативы Президента Республики Таджикистан в послании парламенту страны при поддержке
+       Исполнительного органа государственной власти города Душанбе 10 января в столице состоялась официальная презентация начала деятельности первых электромобилей.
+      Первую партию электромобилей в Душанбе завезли по инициативе столичной мэрии и одной из столичных компаний в сфере общественного транспорта. На первом этапе планируется использование 8 электромобилей, по словам представителя компании, 
+      в самое ближайшее время будет их количество будет доведено до 100 автомобилей.
+      По словам того же источника, данные электромобили закупаются в Китае. Это электромобили марки VOLKSWAGEN E –LAVIDA,
+       бесшумные и работают на электричестве, их батареи и рассчитаны на 300 км дороги.
+      Как отметил заместитель председателя города Душанбе Фирдавс Саидзода, использование электромобилей и троллейбусов выгодно не только с экономической точки зрения, но и экологической.
+      По словам Фирдавса Саидзода, в рамках реализации проекта «Зеленый город», мэрия города Душанбе закупила 104 беспроводных троллейбуса, (один заряд 15 км), в режиме тестирования в столице работают несколько электробусов и один электрический бесконтактный троллейбус (40 км)</p>
+   
+      
+</div>
+
+<div class="qqq">
+  <img  class="sinf"  src="сar.1.jpg" alt="" srcset="">
+  <img  class="sinfi"  src="car.2.jpeg" alt="" srcset="">
+  
+
+  <iframe  class="www"  width="800" height="515" src="https://www.youtube.com/embed/U4aFWfUZZKw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<div>
+  <button class="taxi">  <a target="_blank" href="https://www.youtube.com/watch?v=QBF8dHHfgh0" style="color: white;">Learn more</a></button>
+
+</div>
+
+
+
+<footer>
+  <div class="waves">
+      <div class="wave" id="wave1"></div>
+  </div>
+  <ul class="social">
+      <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-linkedin"><ion-icon></a></li>
+      <li><a href="#"><ion-icon name="logo-instagram"></ion-icon></a></li>
+  </ul>
+  <ul class="menu">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Team</a></li>
+      <li><a href="#">Contact</a></li>
+  </ul>
+  <p>©2022-2023©</p>
+  <p>Company name - First © Bus</p>
+</footer>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+
+
+
+</body>
+</html>
